@@ -69,10 +69,10 @@ with SimpleXMLRPCServer(("127.0.0.1", 8008),
         if(status != 0):
             status = 0
             lock.release()
-            data_jemputan.append('kamu dijemput sama kakak apink jam 2')
+            data_jemputan.append('Anda akan dijemput pada ..... oleh .....')
             print('================================Data JEMPUTAN================================')
             print(data_jemputan)
-            return ('kamu dijemput sama kakak apink jam 2')
+            return ('Anda akan dijemput pada ..... oleh .....')
         else:
             lock.release()
             return ('NIK tidak terdaftar')
