@@ -13,7 +13,8 @@ class RequestHandler(SimpleXMLRPCRequestHandler):
     rpc_paths = ('/RPC2',)
 
 # Buat server
-with SimpleXMLRPCServer(("127.0.0.1", 8008),
+#"127.0.0.1", 8008
+with SimpleXMLRPCServer(("0.0.0.0", 5000),
         requestHandler=RequestHandler, allow_none=True) as server:
     server.register_introspection_functions()
 
