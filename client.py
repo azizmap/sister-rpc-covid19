@@ -4,7 +4,7 @@
 import xmlrpc.client
 
 # buat stub (proxy) untuk client
-s = xmlrpc.client.ServerProxy('http://127.0.0.1:8008')
+s = xmlrpc.client.ServerProxy('http://54.151.246.141:5000')
 
 # lakukan pemanggilan fungsi vote("nama_kandidat") yang ada di server
 print("Masukkan NIK :")
