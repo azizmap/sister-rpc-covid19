@@ -15,7 +15,7 @@ class RequestHandler(SimpleXMLRPCRequestHandler):
 
 # Buat server
 #"0.0.0.0", 8008
-with SimpleXMLRPCServer(("0.0.0.0", 8080),
+with SimpleXMLRPCServer(("0.0.0.0", 8008),
         requestHandler=RequestHandler, allow_none=True) as server:
     server.register_introspection_functions()
 
@@ -26,9 +26,9 @@ with SimpleXMLRPCServer(("0.0.0.0", 8080),
     data_laporan = []
     data_jemputan = []
     data = {}
-    
+    print(data_rakyat['NIK'])
     lock = threading.Lock()
-
+    
     #status untuk berhasil add laporan atau tidak
     status = 0
     tim = 1
@@ -79,7 +79,7 @@ with SimpleXMLRPCServer(("0.0.0.0", 8080),
             if (tim > len(data_penjemput)):
                 tim = 1
 
-            lock.release()            
+            lock.release()      
             print('================================Data JEMPUTAN================================')
             print(data_jemputan)
             return([id, jam_jemput, tim_penjemput, penjemput['Anggota1'].values[0], penjemput['Anggota2'].values[0], penjemput['Anggota3'].values[0]])
